@@ -43,7 +43,7 @@ cd "path/to/folder"
 do "code/mainstream/run_everything.do"
 ```
 
-This will process the raw data, generate structured outputs, and store them in the `output` folder.
+This will process the raw data, generate structured outputs, and store them in the `output` folder. The resulting output files are available for download below.
 
 ## The Data Warehouse (v1.2)
 
