@@ -14,14 +14,11 @@
 	clear
 
 // Working directory and paths
-/*
 	global dofile "code/dashboards/eigt"
 	global intfile "raw_data/eigt/intermediary_files"
 	global hmade "handmade_tables"
 	global supvars "output/databases/supplementary_variables"
 	global output "raw_data/eigt"	
-*/ 
-
 	
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 1.1: Building country-level warehouse

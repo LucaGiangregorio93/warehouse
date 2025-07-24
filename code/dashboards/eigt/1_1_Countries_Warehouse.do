@@ -74,7 +74,7 @@
 	qui compress
 	ds value*
 	foreach var in `r(varlist)' {
-		count if `var' != .
+		count if missing(`var') 
 		if (`r(N)' == 0) drop `var'
 	}
 	
