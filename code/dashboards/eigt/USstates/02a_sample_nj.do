@@ -7,7 +7,7 @@
 		
 	*** unclear about exemption integration with tax spike in second bracket
 	
-	br GeoReg year EIG_Status Adjusted* Federal* Statutory* Child_Exemption federal_marker if GeoReg == "NJ"
+	//br GeoReg year EIG_Status Adjusted* Federal* Statutory* Child_Exemption federal_marker if GeoReg == "NJ"
 	
 			sort GeoReg year n
 			

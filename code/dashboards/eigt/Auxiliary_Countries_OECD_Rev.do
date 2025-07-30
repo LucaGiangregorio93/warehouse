@@ -26,7 +26,7 @@ foreach dataset in oecd nonoecd {
 	
 	*--- Import ---*
 		
-		import delimited "$intfile\OECD_sourcefiles\OECD_taxrev_`dataset'_14april25.csv", clear
+		import delimited "$intfile/OECD_sourcefiles/OECD_taxrev_`dataset'_14april25.csv", clear
 
 		drop structure* action measure v8 ctry_specific_revenue countryspecificrevenuecategory unit_measure freq frequencyofobservation timeperiod observationvalue obs_status observationstatus revenuecode standard_revenue v30 decimals sector revenue_code
 
@@ -78,7 +78,7 @@ foreach dataset in oecd nonoecd {
 
 		rename ref_area GEO3
 		preserve 
-			qui import excel "$hmade\dictionary.xlsx", sheet("GEO") cellrange(A1:C1000) firstrow clear
+			qui import excel "$hmade/dictionary.xlsx", sheet("GEO") cellrange(A1:C1000) firstrow clear
 			rename Country GEO_long
 			duplicates drop
 			tempfile ccodes 

@@ -1,6 +1,6 @@
 	
 	
-	br GeoReg year EIG_Status Adjusted* Federal* Statutory* Child_Exemption federal_marker if GeoReg == "WA"
+	//br GeoReg year EIG_Status Adjusted* Federal* Statutory* Child_Exemption federal_marker if GeoReg == "WA"
 
 	sort GeoReg year Statutory_Class_I_Lower_Bound
 	

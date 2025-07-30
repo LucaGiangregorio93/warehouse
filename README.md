@@ -26,13 +26,49 @@ The [GC Wealth Project website](https://wealthproject.gc.cuny.edu/index.html) �
 
 ## Executing the Stata Code
 
-Below, we provide details on how to execute the pipeline and the structure of the codebase.
+Below, we provide details on required packages and on how to execute the pipeline and the structure of the codebase.
 
-### Code Structure
+### Data Folders
 
-- **`mainstream`**: The core processing stream. Running `run_everything.do` from this folder will execute all scripts required to clean and transform the data.
-- **`dashboards`**: Scripts dedicated to cleaning, estimating, and arranging data from specific sources.
-- **`raw_data`**: Contains unprocessed data used as input. This folder is currently available on demand, since it is approximately 70 Gb. 
+- `raw_data/`: This folder contains the large input datasets used by the code.  
+- `output/`: This folder stores the generated output files, including processed data and results.
+
+⚠️ **IMPORTANT:** These folders are **not included** in the repository due to GitHub's file size limitations.  
+📁 **They are available via Dropbox [here](https://www.dropbox.com/scl/fo/ahwvnausm6yoxu17b145w/AMxF8KlzX2yF5TijX-LlJd8?rlkey=edq66i0ffs3bv09opd92xsjtq&st=f7qqkl5f&dl=0)**
+
+➡️ To run the code, **download the contents** from the Dropbox link and place the `raw_data/` and `output/` folders in the root directory of the project.
+
+
+### Required Stata packages
+
+* From SSC:
+
+```stata 
+ssc install egenmore
+ssc install sxpose
+ssc install findname
+ssc install labmask
+ssc install renvarlab
+ssc install ereplace
+ssc install xfill
+```
+
+* From Sealed Envelope:
+```stata
+net from https://www.sealedenvelope.com/
+net install xfill
+```
+
+* From The Stata Journal:
+```stata
+net install gr0034.pkg, from(http://www.stata-journal.com/software/sj8-2/)
+```
+
+* From Github:
+```stata
+net install github, from("https://haghish.github.io/github/")
+github install haghish/rcall
+```
 
 ### How to Run the Pipeline
 
@@ -44,6 +80,12 @@ do "code/mainstream/run_everything.do"
 ```
 
 This will process the raw data, generate structured outputs, and store them in the `output` folder. The resulting output files are available for download below.
+
+### Code Structure
+
+- **`mainstream`**: The core processing stream. Running `run_everything.do` from this folder will execute all scripts required to clean and transform the data.
+- **`dashboards`**: Scripts dedicated to cleaning, estimating, and arranging data from specific sources.
+- **`raw_data`**: Contains unprocessed data used as input. This folder is currently available on demand, since it is approximately 70 Gb.
 
 ## The Data Warehouse (v1.2)
 

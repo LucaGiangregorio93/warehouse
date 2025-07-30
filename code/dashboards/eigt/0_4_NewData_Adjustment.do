@@ -33,7 +33,8 @@
  // Construct the file path
 	cd "$dir2"
 	*/ 
-	
+clear programs 	
+sysdir set PERSONAL "code/dashboards/eigt/ado"	
 	
 	foreach source in EY_EIG_Guide Government_legislation {	
 		foreach country in AU AT BE BR BG CA CL CN CY /// 
@@ -45,7 +46,7 @@
 		if "`source'" == "EY_EIG_Guide" global name EYb_`country'
 		if "`source'" == "Government_legislation" global name Lex_`country'				
 
-		local filepath "$sources/`source'/`country'"
+		local filepath "$sources/`source'/`country'" 
 		
 		if fileexists("`filepath'/data_longformat.dta") {
 		disp "`country'"
@@ -71,9 +72,14 @@
 				
 			// Replicate for kinship
 				qui split(applies_to), parse(,)
-				gen expans = `r(k_new)'
-				local k = `r(k_new)'
-				local k = `r(k_new)'
+				if ("`r(k_new)'" != "") {
+					local num = `r(k_new)'
+				}
+				else {
+					local num = `r(nvars)'
+				}
+				gen expans = `num'
+				local k = `num'
 				forvalues i = `k'(-1)1 {
 					replace expans = expans - 1 if applies_to`i' == "" 
 				}			

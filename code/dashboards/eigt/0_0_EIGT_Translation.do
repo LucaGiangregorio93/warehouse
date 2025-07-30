@@ -11,9 +11,8 @@
 /// STEP 0: a. OECD revenue download and harmonization; b .ado for new data reading/import /// 
 /// 		c. US States data preparation
 			
-	run "$dofile/Auxiliary_Countries_OECD_Rev.do"
-	run "$dofile/eigt_verify.ado"
-	run "$dofile/Auxiliary_US_States.do"
+	do "$dofile/Auxiliary_Countries_OECD_Rev.do"
+	do "$dofile/Auxiliary_US_States.do"
 	
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 1: Country-level data

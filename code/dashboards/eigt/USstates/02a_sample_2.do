@@ -65,7 +65,7 @@
 	
 	
 	
-	br GeoReg year EIG_Status Adjusted* Federal* Statutory* Child_Exemption federal_marker if GeoReg == "HI"
+	//br GeoReg year EIG_Status Adjusted* Federal* Statutory* Child_Exemption federal_marker if GeoReg == "HI"
 	sort GeoReg year Adjusted_Class_I_Lower_Bound
 	
 	

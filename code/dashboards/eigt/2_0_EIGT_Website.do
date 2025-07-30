@@ -9,13 +9,13 @@
 /// STEP 1: Building country-level wide viz
 
 	display as result "building wide vizualization for countries..."
-	run "$dofile/2_1_Countries_Website.do"
+	do "$dofile/2_1_Countries_Website.do"
 
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 2: Building regional-level warehouse
 
 	display as result "building wide vizualization for regions..."
-	run "$dofile/2_2_Regions_Website.do"
+	do "$dofile/2_2_Regions_Website.do"
 	
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 3: Append and save with currency from supplementary_variables

@@ -3,32 +3,15 @@
 	clear
 
 // Working directory and paths
-
-	*** automatized user paths
-	global username "`c(username)'"
 	
-	dis "$username" // Displays your user name on your computer
-		
-	* Francesca
-	if "$username" == "fsubioli" { 
-		global dir  "/Users/`c(username)'/Dropbox/gcwealth" 
-	}	
-	if "$username" == "Francesca Subioli" | "$username" == "Francesca" | "$username" == "franc" { 
-		global dir  "C:/Users/`c(username)'/Dropbox/gcwealth" 
-	}	
-	* Luca 
-	if "$username" == "lgiangregorio" | "$username" == "lucagiangregorio" { 
-		global dir  "/Users/`c(username)'/Dropbox/gcwealth" 
-	}
-	
-	global dofile "$dir/code/dashboards/eigt"
-	global dofile_us "$dir/code/dashboards/eigt/USstates"
-	global intfile "$dir/raw_data/eigt/intermediary_files"
-	global hmade "$dir/handmade_tables"
-	global supvars "$dir/output/databases/supplementary_variables"
-	global sources "$dir/raw_data/eigt/sources"
-	global output "$dir/raw_data/eigt"
-	global website "$dir/output/databases/website"
+	global dofile "code/dashboards/eigt"
+	global dofile_us "code/dashboards/eigt/USstates"
+	global intfile "raw_data/eigt/intermediary_files"
+	global hmade "handmade_tables"
+	global supvars "output/databases/supplementary_variables"
+	global sources "raw_data/eigt/sources"
+	global output "raw_data/eigt"
+	global website "output/databases/website"
 
 	
 	global supvarver 16Jul2024
