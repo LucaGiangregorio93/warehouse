@@ -18,10 +18,10 @@ run "code/mainstream/auxiliar/version_control.do"
 
 //list codes 
 **********************************************************
-global do_codes1 " "01c" "  //"01a" "01b"
+global do_codes1 " "01a" "01b" "01c" " 
 global do_codes2 " "02a" "02b" "
-global do_codes3 " "03a" "03b" "03c" " 
-global do_codes4 " "04a" " 
+global do_codes3 " "03b" "03c" "03a" " 
+
 **********************************************************
 
 //report and save start time 

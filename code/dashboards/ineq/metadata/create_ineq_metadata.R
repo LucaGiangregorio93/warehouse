@@ -1,7 +1,13 @@
-library(tidyverse)
-library(readxl)
-library(xlsx)
-library(qdapRegex)
+
+required_packages <- c("tidyverse", "readxl", "xlsx", "qdapRegex")
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+for (pkg in required_packages) {
+  if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
+    install.packages(pkg, dependencies = TRUE)
+    library(pkg, character.only = TRUE)
+  }
+}
+
 ###change location once new dictionary has been moved to new dropbox folder; 
 #location of source code is not set to "gcwealth"
 
@@ -141,7 +147,3 @@ df_in$varcode <- paste0(df_in$out, "-",df_in$d5)
   write.csv(meta_ineq, "./output/metadata/metadata_ineq.csv", row.names = FALSE)
   write.xlsx2(meta_ineq, "./output/metadata/metadata_ineq.xlsx", row.names = FALSE, sheetName = "meta_ineq")
 setwd("../")
-
-  write.csv(meta_ineq, "./THE_GC_WEALTH_PROJECT_website/metadata_ineq.csv", row.names = FALSE)
-  write.xlsx2(meta_ineq, "./THE_GC_WEALTH_PROJECT_website/metadata_ineq.xlsx", row.names = FALSE, sheetName = "meta_ineq")
-  

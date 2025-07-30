@@ -23,10 +23,10 @@ foreach w in viz meta eigt  {
 			"output/databases/full_warehouse/`fnam'${old_vctr}.csv", clear 
 	} 
 	else {
-		qui import delimited "output/databases/`fnam'.csv", clear 
+		qui import delimited ///
+			"output/databases/previous_versions/`fnam'${old_vctr}.csv", clear 
 	}
 	cap drop 
-	*qui use "output/databases/`fnam'.dta", clear 
 	global wht `w'
 	run "code/mainstream/auxiliar/describe_warehouse.do"
 	foreach v of global whvars_`w' {
@@ -35,8 +35,10 @@ foreach w in viz meta eigt  {
 			di as text "`u'(${`v'_`u'_`w'}) " _continue 
 		}
 	}
-	if ("`w'" == "vix") exit 1  
 }
+
+*run R script to create ineq metadata 
+rcall: source("code/dashboards/ineq/metadata/create_ineq_metadata.R")
 
 *load source-specific metadata to memory 
 qui import excel "handmade_tables/dictionary.xlsx", ///

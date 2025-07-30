@@ -24,19 +24,19 @@
 /// STEP 1.1: Building country-level warehouse
 
 	display as result "Building warehouse for countries..."
-	run "$dofile/1_1_Countries_Warehouse.do"
+	do "$dofile/1_1_Countries_Warehouse.do"
 
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 2: Adding new data
 
 	display as result "Adding new data for countries..."
-	run "$dofile/1_2_NewData_Warehouse.do"
+	do "$dofile/1_2_NewData_Warehouse.do"
 	
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 3: Building regional-level warehouse
 
 	display as result "Building warehouse for regions..."
-	run "$dofile/1_3_Regions_Warehouse.do"
+	do "$dofile/1_3_Regions_Warehouse.do"
 	
 ////////////////////////////////////////////////////////////////////////////////
 /// STEP 4: Append, check consistency and save 
@@ -221,5 +221,5 @@ qui {
 	
 	order varcode percentile metadata 
 
-	qui export delimited using "$dir/output/metadata/metadata_eigt.csv", nolabel replace  
+	qui export delimited using "output/metadata/metadata_eigt.csv", nolabel replace  
 }
