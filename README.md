@@ -53,6 +53,12 @@ net install xfill
 net install gr0034.pkg, from(http://www.stata-journal.com/software/sj8-2/)
 ```
 
+* From Github:
+* ```stata
+  net install github, from("https://haghish.github.io/github/")
+  github install haghish/rcall
+  ```
+
 ### How to Run the Pipeline
 
 To run the full pipeline, set your working directory to the repository’s location and execute `run_everything.do`:
